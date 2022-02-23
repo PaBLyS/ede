@@ -25,7 +25,7 @@ export default {
 .cswitch 
     width: 28px
     border-radius: 28px
-    background: var(--text-color)
+    background: var(--text-header-color)
     margin: 0 10px
     padding: 1px
     cursor: pointer
@@ -38,7 +38,7 @@ export default {
     &-wrap
         display: flex
         align-items: center
-        color: var(--text-color)
+        color: var(--text-header-color)
         font-size: 9px
         font-weight: 400
 

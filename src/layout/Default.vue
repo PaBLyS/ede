@@ -3,21 +3,21 @@
         <div class="layout-header">
             <div class="layout-header-nav">
                 <router-link :to="{ name: 'AllCurrencies' }" class="layout-header-nav__item">All currencies</router-link>
-                <router-link :to="{ name: 'AllCurrencies' }" class="layout-header-nav__item">My currencies</router-link>
+                <router-link :to="{ name: 'MyCurrencies' }" class="layout-header-nav__item">My currencies</router-link>
             </div>
 
-            <CSwitchTheme />
+            <SwitchTheme />
         </div>
         <slot />
     </div>
 </template>
 
 <script>
-import CSwitchTheme from '@/components/CSwitchTheme.vue'
+import SwitchTheme from '@/components/SwitchTheme.vue'
 
 export default {
     name: 'DefaultLayout',
-    components: { CSwitchTheme },
+    components: { SwitchTheme },
 }
 </script>
 
@@ -34,6 +34,8 @@ export default {
         display: flex
         align-items: center
         justify-content: space-between
+        position: sticky
+        top: 0
 
         &-nav
             display: flex
@@ -42,12 +44,12 @@ export default {
             &__item 
                 margin: 0 10px
                 text-decoration: none
-                color: var(--text-color)
+                color: var(--text-header-color)
                 font-family: var(--text-family), sans-serif
                 font-weight: 500
                 font-size: 10px
                 line-height: 15px
                 
-                .active-link
-                    text-decoration: ubderline
+                &.active
+                    text-decoration: underline
 </style>
