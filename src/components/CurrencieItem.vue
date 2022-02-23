@@ -47,8 +47,4 @@ export default {
     height: 32px
     width: 32px
     cursor: pointer
-
-    svg path
-      stroke: var(--text-color)
-      fill: var(--text-color)
 </style>
