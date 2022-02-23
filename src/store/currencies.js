@@ -31,6 +31,17 @@ export default {
                         reject(err)
                     })
             })
+        },
+        getConvert(vm, data) {
+            return new Promise((resolve, reject) => {
+                axios.get('convert', data)
+                    .then(res => {
+                        resolve(res.data)
+                    })
+                    .catch(err => {
+                        reject(err)
+                    })
+            })
         }
     }
 }
