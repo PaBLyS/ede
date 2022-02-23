@@ -1,10 +1,9 @@
-import { mapGetters, mapMutations } from 'vuex'
-import StarR from '@/assets/star-regular'
-import StarS from '@/assets/star-solid'
+import { mapGetters } from 'vuex'
+import CurrencieItem from '@/components/CurrencieItem'
 
 export default {
     name: 'AllCurrencies',
-    components: { StarR, StarS }, 
+    components: { CurrencieItem },
     data() {
         return {
             search: ''
@@ -15,8 +14,5 @@ export default {
         filterCurrencies() {
             return this.currencies.filter(i => i.label.toLowerCase().indexOf(this.search.toLowerCase()) !== -1)
         }
-    },
-    methods: {
-        ...mapMutations(['changeFav']),
     }
 }

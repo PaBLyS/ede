@@ -1,28 +1,28 @@
 <template>
-    <div class="cswitch-wrap">
-        Light theme
-        <div :class="{cswitch: true, on: darkTheme}" @click="changeDarkTheme">
-            <div class="cswitch-circle" />
-        </div>
-        Dark theme
+  <div class="cswitch-wrap">
+    Light theme
+    <div :class="{ cswitch: true, on: darkTheme }" @click="changeDarkTheme">
+      <div class="cswitch-circle" />
     </div>
+    Dark theme
+  </div>
 </template>
 
 <script>
-import { mapState, mapMutations } from 'vuex'
+import { mapState, mapMutations } from "vuex";
 
 export default {
-    computed: {
-        ...mapState(['darkTheme']),
-    },
-    methods: {
-        ...mapMutations(['changeDarkTheme'])
-    }
-}
+  computed: {
+    ...mapState(["darkTheme"]),
+  },
+  methods: {
+    ...mapMutations(["changeDarkTheme"]),
+  },
+};
 </script>
 
 <style lang="sass" scoped>
-.cswitch 
+.cswitch
     width: 44px
     border-radius: 28px
     background: var(--text-header-color)
@@ -32,7 +32,7 @@ export default {
     display: flex
     justify-content: flex-start
 
-    &.on 
+    &.on
         justify-content: flex-end
 
     &-wrap
@@ -47,5 +47,4 @@ export default {
         width: 20px
         border-radius: 12px
         background: var(--background-header-color)
-
 </style>

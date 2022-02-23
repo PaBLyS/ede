@@ -17,11 +17,13 @@ export default {
     methods: {
         ...mapActions(['getConvert']),
         fetchData() {
-            this.getConvert({ params: {
-                from: this.$route.params.id,
-                to: 'USD',
-                amount: this.first_currencie
-            }})
+            this.getConvert({
+                params: {
+                    from: this.$route.params.id,
+                    to: 'USD',
+                    amount: this.first_currencie
+                }
+            })
                 .then(res => {
                     this.second_currencie = res.result
                 })

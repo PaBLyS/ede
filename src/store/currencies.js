@@ -21,27 +21,17 @@ export default {
     actions: {
         fetchAllCurrencies({ commit }, data) {
             commit('setCurrencies', [])
-            return new Promise((resolve, reject) => {
-                axios.get('latest', data)
-                    .then(res => {
-                        commit('setCurrencies', Object.keys(res.data.rates).sort().map(item => ({ id: item, label: item, value: res.data.rates[item], fav: false })))
-                        resolve(res)
-                    })
-                    .catch(err => {
-                        reject(err)
-                    })
-            })
+            return axios.get('latest', data)
+                .then(res => {
+                    commit('setCurrencies', Object.keys(res.data.rates).sort().map(item => ({ id: item, label: item, value: res.data.rates[item], fav: false })))
+                    return res
+                })
         },
         getConvert(vm, data) {
-            return new Promise((resolve, reject) => {
-                axios.get('convert', data)
-                    .then(res => {
-                        resolve(res.data)
-                    })
-                    .catch(err => {
-                        reject(err)
-                    })
-            })
+            return axios.get('convert', data)
+                .then(res => {
+                    return res.data
+                })
         }
     }
 }

@@ -6,7 +6,7 @@ const store = createStore({
         darkTheme: !!localStorage.getItem('theme')
     }),
     mutations: {
-        changeDarkTheme(state) { 
+        changeDarkTheme(state) {
             state.darkTheme = !state.darkTheme
             localStorage.setItem('theme', state.darkTheme ? 'dark' : '')
         }
