@@ -1,5 +1,6 @@
 import AllCurrencies from '@/view/AllCurrencies'
 import MyCurrencies from '@/view/MyCurrencies'
+import Currencie from '@/view/Currencie'
 
 export default [
     {
@@ -17,5 +18,10 @@ export default [
         path: '/my-currencies',
         name: 'MyCurrencies',
         component: MyCurrencies
+    },
+    {
+        path: '/currencie/:id',
+        name: 'Currencie',
+        component: Currencie
     },
 ]

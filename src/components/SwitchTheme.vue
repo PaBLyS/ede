@@ -23,11 +23,11 @@ export default {
 
 <style lang="sass" scoped>
 .cswitch 
-    width: 28px
+    width: 44px
     border-radius: 28px
     background: var(--text-header-color)
     margin: 0 10px
-    padding: 1px
+    padding: 2px
     cursor: pointer
     display: flex
     justify-content: flex-start
@@ -39,12 +39,12 @@ export default {
         display: flex
         align-items: center
         color: var(--text-header-color)
-        font-size: 9px
+        font-size: 14px
         font-weight: 400
 
     &-circle
-        height: 12px
-        width: 12px
+        height: 20px
+        width: 20px
         border-radius: 12px
         background: var(--background-header-color)
 

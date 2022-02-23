@@ -27,7 +27,7 @@ export default {
     background: var(--background-color)
 
     &-header
-        height: 50px
+        height: 80px
         width: 100%
         background: var(--background-header-color)
         padding: 0 20px
@@ -47,7 +47,7 @@ export default {
                 color: var(--text-header-color)
                 font-family: var(--text-family), sans-serif
                 font-weight: 500
-                font-size: 10px
+                font-size: 16px
                 line-height: 15px
                 
                 &.active

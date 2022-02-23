@@ -3,10 +3,12 @@
         <input
             :value="modelValue"
             @input="$emit('update:modelValue', $event.target.value)"
+            :disabled="disabled"
             class="cinput"
             :placeholder="placeholder"
+            :type="type"
         />
-        <img src="@/assets/search.png" />
+        <slot />
     </div>
 </template>
 
@@ -15,7 +17,9 @@ export default {
     emits: ['update:modelValue'],
     props: {
         modelValue: {},
-        placeholder: { type: String, default: '' }
+        placeholder: { type: String, default: '' },
+        type: { type: String, default: 'text' },
+        disabled: { type: Boolean, default: false }
     }
 }
 </script>
@@ -24,7 +28,7 @@ export default {
 .cinput
     border: none
     width: 100%
-    font-size: 10px
+    font-size: 16px
     background: transparent
     color: var(--text-color)
 
@@ -32,13 +36,10 @@ export default {
         outline: none
 
     &-wrap 
-        width: 200px
-        height: 25px
+        width: 100%
+        height: 40px
         display: flex
         align-items: center
         border: 1px solid #DDDDDD
         padding-left: 7px
-
-        img 
-            margin: 0 3px
 </style>
