@@ -6,12 +6,15 @@
 
 <script>
 import DefaultLayout from '@/layout/Default'
-import { mapState } from 'vuex'
+import { mapState, mapActions } from 'vuex'
 
 export default {
     name: 'App',
     components: {
         DefaultLayout
+    },
+    created() {
+        this.fetchAllCurrencies()
     },
     computed: {
         ...mapState(['darkTheme']),
@@ -21,6 +24,9 @@ export default {
                 'dark-theme': this.darkTheme 
             }
         }
+    },
+    methods: {
+        ...mapActions(['fetchAllCurrencies'])
     }
 }
 </script>

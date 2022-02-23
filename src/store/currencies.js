@@ -24,7 +24,7 @@ export default {
             return new Promise((resolve, reject) => {
                 axios.get('latest', data)
                     .then(res => {
-                        commit('setCurrencies', Object.keys(res.data.rates).map(item => ({ id: item, label: item, value: res.data.rates[item], fav: false })))
+                        commit('setCurrencies', Object.keys(res.data.rates).sort().map(item => ({ id: item, label: item, value: res.data.rates[item], fav: false })))
                         resolve(res)
                     })
                     .catch(err => {
